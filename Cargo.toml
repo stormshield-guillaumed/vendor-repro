@@ -1,0 +1,6 @@
+[package]
+name = "vendor-repro"
+edition = "2021"
+
+[dependencies]
+axum-server = { git = "https://github.com/programatik29/axum-server" }
