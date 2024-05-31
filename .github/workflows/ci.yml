@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  vendor:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-24.04, ubuntu-22.04, ubuntu-20.04 ]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run cargo vendor
+        run: cargo vendor > .cargo/config.toml
+
+      - name: Check the diff is empty
+        run: test -z "$(git status --porcelain)"
+
+      - name: Display diff if not empty
+        if: ${{ failure() }}
+        run: git diff
