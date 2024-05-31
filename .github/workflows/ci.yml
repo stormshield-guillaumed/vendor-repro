@@ -19,6 +19,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Run cargo version --verbose
+        run: cargo version --verbose
+
       - name: Run cargo vendor
         run: cargo vendor > .cargo/config.toml
 
