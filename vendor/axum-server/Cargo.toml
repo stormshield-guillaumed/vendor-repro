@@ -59,16 +59,40 @@ name = "axum_server"
 path = "src/lib.rs"
 
 [[example]]
+name = "from_std_listener"
+path = "examples/from_std_listener.rs"
+
+[[example]]
 name = "from_std_listener_rustls"
 path = "examples/from_std_listener_rustls.rs"
 doc-scrape-examples = true
 required-features = ["tls-rustls"]
 
 [[example]]
+name = "graceful_shutdown"
+path = "examples/graceful_shutdown.rs"
+
+[[example]]
+name = "hello_world"
+path = "examples/hello_world.rs"
+
+[[example]]
 name = "http_and_https"
 path = "examples/http_and_https.rs"
 doc-scrape-examples = true
 required-features = ["tls-rustls"]
+
+[[example]]
+name = "multiple_addresses"
+path = "examples/multiple_addresses.rs"
+
+[[example]]
+name = "remote_address"
+path = "examples/remote_address.rs"
+
+[[example]]
+name = "remote_address_using_tower"
+path = "examples/remote_address_using_tower.rs"
 
 [[example]]
 name = "rustls_reload"
@@ -91,30 +115,6 @@ required-features = ["tls-rustls"]
 [[example]]
 name = "shutdown"
 path = "examples/shutdown.rs"
-
-[[example]]
-name = "remote_address"
-path = "examples/remote_address.rs"
-
-[[example]]
-name = "from_std_listener"
-path = "examples/from_std_listener.rs"
-
-[[example]]
-name = "graceful_shutdown"
-path = "examples/graceful_shutdown.rs"
-
-[[example]]
-name = "hello_world"
-path = "examples/hello_world.rs"
-
-[[example]]
-name = "multiple_addresses"
-path = "examples/multiple_addresses.rs"
-
-[[example]]
-name = "remote_address_using_tower"
-path = "examples/remote_address_using_tower.rs"
 
 [dependencies]
 bytes = "1"
