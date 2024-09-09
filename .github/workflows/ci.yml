@@ -32,4 +32,5 @@ jobs:
         run: test "$(git status --porcelain | grep vendor/log)"
 
       - name: Display diff
+        if: ${{ always() }}
         run: git diff
