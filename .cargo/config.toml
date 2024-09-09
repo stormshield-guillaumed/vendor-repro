@@ -1,8 +1,6 @@
-[source.crates-io]
-replace-with = "vendored-sources"
-
-[source."git+https://github.com/programatik29/axum-server"]
-git = "https://github.com/programatik29/axum-server"
+[source."git+https://github.com/rust-lang/log.git?rev=d1a8306aadb88d56b74c73cdce4ef0153fb549cb"]
+git = "https://github.com/rust-lang/log.git"
+rev = "d1a8306aadb88d56b74c73cdce4ef0153fb549cb"
 replace-with = "vendored-sources"
 
 [source.vendored-sources]

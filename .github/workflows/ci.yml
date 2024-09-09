@@ -22,12 +22,14 @@ jobs:
       - name: Run cargo version --verbose
         run: cargo version --verbose
 
+      - name: Update log to newer commit with same crate version
+        run: sed -i s/d1a8306aadb88d56b74c73cdce4ef0153fb549cb/96dbf58ec05e844ec55aa2282f32f612372fbced/ Cargo.toml
+
       - name: Run cargo vendor
-        run: cargo vendor > .cargo/config.toml
+        run: cargo vendor --versioned-dirs > .cargo/config.toml
 
-      - name: Check the diff is empty
-        run: test -z "$(git status --porcelain)"
+      - name: Check vendoring of log has changed
+        run: test "$(git status --porcelain | grep vendor/log)"
 
-      - name: Display diff if not empty
-        if: ${{ failure() }}
+      - name: Display diff
         run: git diff

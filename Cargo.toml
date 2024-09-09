@@ -3,4 +3,4 @@ name = "vendor-repro"
 edition = "2021"
 
 [dependencies]
-axum-server = { git = "https://github.com/programatik29/axum-server" }
+log = { git = "https://github.com/rust-lang/log.git", rev = "d1a8306aadb88d56b74c73cdce4ef0153fb549cb" }
