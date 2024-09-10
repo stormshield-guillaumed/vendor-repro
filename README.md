@@ -1,3 +1,3 @@
 # Vendor repro
 
-Minimal reproduction of non deterministic vendoring of git dependencies.
+Minimal reproduction of git dependencies being skipped during vendoring.
