@@ -32,7 +32,7 @@ jobs:
         run: cargo vendor --versioned-dirs > .cargo/config.toml
 
       - name: Check vendoring of log has changed
-        run: test "$(git status --porcelain | grep vendor/log)"
+        run: git status --porcelain | grep vendor/log
 
       - name: Display diff
         if: ${{ always() }}
